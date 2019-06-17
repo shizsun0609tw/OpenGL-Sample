@@ -20,7 +20,7 @@ bool _var::initial = false;
 
 void _var::update() {
 	/* time update */
-	_var::time = chrono::duration_cast<chrono::milliseconds>(lastTime - chrono::steady_clock::now()).count() / 1000.f;
+	_var::time = chrono::duration_cast<chrono::milliseconds>(chrono::steady_clock::now() - lastTime).count() / 1000.f;
 	_var::lastTime = chrono::steady_clock::now();
 	/* eye update */
 	_var::eye.update();
